@@ -1,0 +1,3 @@
+opencv-python==4.4.0.42
+tensorflow-gpu==2.3.0
+keras-gpu==2.4.3
