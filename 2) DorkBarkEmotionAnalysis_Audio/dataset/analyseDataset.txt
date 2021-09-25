@@ -1,0 +1,37 @@
+#import csv into Pandas
+colNames = ['YTID', 'startSec', 'endSec', 'positiveLabels']
+
+csvRead = pd.read_csv('./dataset/balanced_train_segments.csv', comment='#', sep=', ', names=colNames)
+
+
+#finding partial labels in positiveLabels
+a = csvRead.loc[csvRead['positiveLabels'].str.contains('/m/09x0r')]
+
+#download each video from pandas DataFrame 
+for row_index, row in a.iterrows():
+    print(row['YTID'])
+    print(row['startSec'])
+    print(row['endSec'])    
+
+	...
+	dl with youtube-dl
+	...
+
+
+'''
+dataset class label meaning:
+============================
+/m/0ghcn6 => growling   #angry dog
+/m/07qf0zm => howl      #get ur dog to the vet (sick dog)
+/m/07rc7d9 => Bow-wow   #happy/communicating dog (happy dog)
+'''
+#results of each labels that I want
+>>> len(csvRead.loc[csvRead['positiveLabels'].str.contains('/m/07qf0zm')])
+60
+>>> len(csvRead.loc[csvRead['positiveLabels'].str.contains('/m/07qf0zm')])
+60
+>>> len(csvRead.loc[csvRead['positiveLabels'].str.contains('/m/0ghcn6')])
+61
+>>> len(csvRead.loc[csvRead['positiveLabels'].str.contains('/m/07rc7d9')])
+60
+

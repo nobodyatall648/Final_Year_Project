@@ -1,0 +1,7 @@
+dataset website
+===============
+https://research.google.com/audioset/download.html#split
+
+collecting datasets from youtube video
+=======================================
+https://github.com/ytdl-org/youtube-dl#embedding-youtube-dl
